@@ -1,0 +1,223 @@
+:root {
+  --blackish-grey-1: #333333; /* dark grey */
+  --blackish-grey-2: #444444; /* medium grey */
+  --blackish-grey-3: #555555; /* light grey */
+  --creamy-white: #F5F5F5; /* creamy white */
+  --box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /*box shadow*/
+  --container-white: #ffffff;/* pure white */
+  --hangman-green: #8BC34A; /* green tone for correct guesses */
+  --hangman-green-light: #C6E2B5; /* lightened version of --hangman-green */
+  --hangman-red: #E74C3C; /* red tone for incorrect guesses */
+  --hangman-red-light: #FFC5C5; /* lightened version of --hangman-red */
+  --keyboard-key-light: #fcfcfc; /* lightened version of #f0f0f0 */
+  --font-size: 16px; /* base font size */
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--creamy-white);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  font-size: var(--font-size);
+}
+
+.container {
+  width: clamp(600px, 50vw, 1280px);
+  height: clamp(300px, 35vh, 980px);
+  margin: 0.6rem;
+  padding: 50px;
+  background-color: var(--container-white);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container img {
+  height: 250px;
+}
+
+.container h2 {
+  text-align: center;
+}
+
+.wordContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.wordContainer span {
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid var(--blackish-grey-3);
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  text-align: center;
+  width: 250px;
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: 1px solid var(--blackish-grey-3);
+}
+
+.keyboardContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.keyboardRow {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.keyboardKey {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: var(--creamy-white);
+  color: var(--blackish-grey-1);
+  border: 1px solid #ccc;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.submitButton {
+  background-color: var(--hangman-green);
+}
+
+.submitButton:hover {
+  background-color: var(--hangman-green-light) !important;
+}
+
+.restartButton {
+  background-color: var(--hangman-red);
+}
+
+.restartButton:hover {
+  background-color: var(--hangman-red-light) !important;
+}
+
+.keyboardKey:hover {
+  background-color: var(--keyboard-key-light);
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90vw;
+    height: 45vh;
+    padding: 20px;
+  }
+
+  .container img{
+    height: 150px;
+  }
+
+  .wordContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .wordContainer span {
+    margin: 5px;
+    padding: 5px;
+    font-size: 1.2rem;
+  }
+
+  input[type="text"] {
+    width: 80vw;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .keyboardContainer {
+    margin-top: 10px;
+  }
+
+  .keyboardRow {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .keyboardKey {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 80vw;
+    height: 45vh;
+    padding: 10px;
+  }
+
+  .container img{
+    height: 100px;
+  }
+
+  .wordContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .wordContainer span {
+    margin: 3px;
+    padding: 3px;
+    font-size: 1rem;
+  }
+
+  input[type="text"] {
+    width: 75vw;
+    padding: 5px;
+    font-size: 0.8rem;
+  }
+
+  .keyboardContainer {
+    margin-top: 5px;
+  }
+
+  .keyboardRow {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .keyboardKey {
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+    font-size: 0.7rem;
+    line-height: 20px;
+  }
+}
